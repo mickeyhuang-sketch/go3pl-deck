@@ -1,0 +1,253 @@
+/* GoNetwork 概念討論簡報 — 類型 3 靜態論述型，版面語言沿 SITI 定稿（左對齊、細線、白底） */
+* { margin:0; padding:0; box-sizing:border-box; }
+:root {
+  --blue:#008ED8; --green:#00A452; --yellow:#FCCC27;
+  --ink:#1D1D1F; --grey:#4B5563; --grey2:#707A88;
+  --soft:#F5F5F7; --line:#D9DEE5;
+  --blue-soft:#EAF6FD; --blue-tint:#B3DFF3;
+  --green-soft:#EAF7F0; --green-tint:#B3E4CB;
+  --yellow-soft:#FFF8DF; --yellow-tint:#FEEBA9;
+  --ibiza:#007498; --ib-soft:#EAF3F7; --ib-mid:#CFE3EC; --ib-tint:#9FC6D6;
+}
+body { font-family:"Noto Sans TC","PingFang TC","Heiti TC",sans-serif; color:var(--ink); background:#fff;
+  font-feature-settings:"tnum"; font-weight:600; }
+@page { size:1600px 900px; margin:0; }
+
+.slide { width:1600px; height:900px; position:relative; overflow:hidden; background:#fff;
+  page-break-after:always; display:flex; flex-direction:column; padding:56px 100px 0; }
+
+/* ── 頁首 ── */
+header.hd { flex:0 0 auto; }
+.eyebrow { display:flex; align-items:center; gap:14px; font-size:26px; font-weight:800; color:var(--blue); letter-spacing:3px; }
+.eyebrow img.mark { height:38px; width:auto; }
+header.hd h1 { font-size:46px; font-weight:900; letter-spacing:1px; margin-top:10px; color:var(--ink); }
+header.hd .lede { font-size:23px; color:var(--grey); margin-top:8px; font-weight:500; }
+.hd-rule { height:1.5px; background:var(--line); margin:22px 0 0; }
+
+/* ── 內容區 ── */
+main.bd { flex:1; display:flex; flex-direction:column; padding-top:28px; min-height:0; }
+
+/* ── 頁尾 ── */
+footer.ft { flex:0 0 auto; height:62px; border-top:1.5px solid var(--line);
+  display:flex; align-items:center; justify-content:space-between; margin-top:10px; }
+footer.ft img.brand { height:30px; }
+footer.ft .pn { font-size:19px; color:var(--grey2); font-weight:600; letter-spacing:1px; }
+
+/* ── 重點句 ── */
+.takeaway { border-left:5px solid var(--blue); padding:4px 0 4px 22px; font-size:23px;
+  font-weight:700; color:var(--ink); line-height:1.5; }
+.takeaway em { font-style:normal; font-weight:800; }
+
+/* ── 「本頁要定」黃底提問框 ── */
+.decide { background:var(--yellow-soft); border-left:5px solid var(--yellow); padding:16px 24px; font-size:22px; line-height:1.55; color:var(--ink); }
+.decide b { font-weight:800; }
+.decide .tag { display:inline-block; font-size:19px; font-weight:800; letter-spacing:2px; color:var(--ink); margin-right:14px; }
+
+/* ── 清單 ── */
+ul.dash { list-style:none; }
+ul.dash li { position:relative; padding-left:30px; margin:12px 0; font-size:22px; line-height:1.6; }
+ul.dash li::before { content:""; position:absolute; left:2px; top:15px; width:14px; height:3.5px; background:var(--blue); border-radius:2px; }
+b.hl { font-weight:800; }
+
+.split { display:flex; gap:56px; flex:1; min-height:0; }
+.col { display:flex; flex-direction:column; min-height:0; }
+.sec-k { font-size:20px; color:var(--grey); font-weight:800; letter-spacing:2px; margin-bottom:8px; }
+
+/* ═══ 封面 ═══ */
+.cover { padding-top:56px; }
+.cover .body { flex:1; display:flex; flex-direction:column; justify-content:center; padding-bottom:40px; }
+.cover .brandtop { width:265px; margin-bottom:22px; margin-left:-15px; }
+.cover .eyebrow { font-size:24px; letter-spacing:4px; }
+.cover h1.big { font-size:72px; font-weight:900; line-height:1.28; letter-spacing:2px; margin-top:22px; }
+.cover .eq { margin-top:26px; font-size:26px; font-weight:700; color:var(--grey); letter-spacing:2px; }
+.cover .meta { display:grid; grid-template-columns:1fr 1fr; gap:18px 60px; margin-top:56px; padding-top:28px; border-top:1.5px solid var(--line); max-width:1100px; }
+.cover .meta .row { font-size:22px; display:flex; gap:16px; white-space:nowrap; }
+.cover .meta .k { color:var(--grey); font-weight:700; flex:0 0 120px; }
+.cover .meta .v { font-weight:700; }
+.cover .coverft { position:absolute; left:100px; right:100px; bottom:26px; display:flex; justify-content:space-between; font-size:19px; color:var(--grey2); font-weight:600; }
+
+/* ═══ P1 金字塔 ═══ */
+.pyr { display:grid; grid-template-columns:560px 1fr; column-gap:40px; row-gap:10px; align-content:space-evenly; height:100%; }
+.pyr .layer { height:108px; display:flex; align-items:center; justify-content:center; text-align:center; font-size:24px; font-weight:800; color:var(--ink); }
+.pyr .l1 { clip-path:polygon(30% 0,70% 0,78% 100%,22% 100%); background:var(--blue); color:#fff; }
+.pyr .l2 { clip-path:polygon(22% 0,78% 0,86% 100%,14% 100%); background:var(--blue-tint); }
+.pyr .l3 { clip-path:polygon(14% 0,86% 0,94% 100%,6% 100%); background:var(--blue-soft); }
+.pyr .l4 { clip-path:polygon(6% 0,94% 0,100% 100%,0 100%); background:var(--soft); }
+.pyr .desc { display:flex; flex-direction:column; justify-content:center; border-bottom:1.5px solid var(--line); padding:6px 0; }
+.pyr .desc .t { font-size:23px; font-weight:800; }
+.pyr .desc .s { font-size:21px; color:var(--grey); font-weight:500; line-height:1.5; margin-top:4px; }
+.pyr .desc .t .no { color:var(--grey); margin-right:10px; }
+
+/* ═══ P2 角色對話 ═══ */
+.roles { display:flex; flex-direction:column; justify-content:space-evenly; flex:1; min-height:0; }
+.role { display:grid; grid-template-columns:230px 1fr 1fr; gap:26px; align-items:center; }
+.role .who { display:flex; align-items:center; gap:14px; }
+.role .who .av { width:64px; height:64px; border-radius:50%; background:var(--soft); display:flex; align-items:center; justify-content:center; flex:0 0 64px; }
+.role .who .av svg { width:36px; height:36px; }
+.role .who .nm { font-size:23px; font-weight:800; line-height:1.3; }
+.role .who .nm small { display:block; font-size:19px; color:var(--grey); font-weight:600; margin-top:2px; }
+.bub { position:relative; border-radius:16px; padding:16px 22px; font-size:22px; line-height:1.55; font-weight:600; }
+.bub.say { background:var(--soft); color:var(--ink); }
+.bub.say::before { content:""; position:absolute; left:-12px; top:26px; border:12px solid transparent; border-right-color:var(--soft); border-left:0; }
+.bub.ans { background:var(--blue-soft); color:var(--ink); display:flex; gap:14px; align-items:flex-start; }
+.bub.ans img { height:34px; width:auto; flex:0 0 auto; margin-top:2px; }
+.bub.ans::before { content:""; position:absolute; left:-12px; top:26px; border:12px solid transparent; border-right-color:var(--blue-soft); border-left:0; }
+
+/* ═══ P3 對照表 ═══ */
+table.cmp { width:100%; border-collapse:collapse; font-size:22px; table-layout:fixed; }
+table.cmp th { text-align:left; padding:12px 20px 14px; border-bottom:2.5px solid var(--ink); font-size:24px; font-weight:900; }
+table.cmp th.a { color:var(--ink); } table.cmp th.b { color:var(--ink); }
+table.cmp th:first-child, table.cmp td:first-child { width:190px; color:var(--grey); font-size:20px; font-weight:800; letter-spacing:1px; }
+table.cmp td { padding:19px 20px; border-bottom:1.5px solid var(--line); vertical-align:top; line-height:1.5; }
+table.cmp td.b { background:var(--ib-soft); }
+.chips { display:flex; gap:16px; flex-wrap:wrap; margin-top:10px; }
+.chip { display:inline-flex; align-items:center; gap:10px; border:2px solid var(--ink); border-radius:999px; padding:6px 18px; font-size:21px; font-weight:700; background:#fff; }
+.chip .box { width:20px; height:20px; border:2.5px solid var(--ink); border-radius:5px; }
+
+/* ═══ P4 名字卡＋光譜 ═══ */
+.names { display:flex; gap:28px; }
+.name { flex:1; border:2px solid var(--line); border-radius:18px; padding:16px 24px 14px; position:relative; }
+.name.lead { border-color:var(--ibiza); box-shadow:0 0 0 2px var(--ibiza) inset; }
+.name .badge { position:absolute; right:22px; top:-16px; background:var(--yellow); color:var(--ink); font-size:18px; font-weight:800; padding:4px 14px; border-radius:999px; letter-spacing:1px; }
+.name .en { font-size:46px; color:var(--ibiza); font-weight:900; letter-spacing:0; line-height:1.1; }
+.name .zh { font-size:24px; font-weight:800; color:var(--grey); letter-spacing:4px; line-height:1.2; margin-top:6px; }
+.name .sub { font-size:22px; font-weight:700; margin-top:10px; }
+.name .rg { font-size:20px; color:var(--grey); font-weight:500; line-height:1.5; margin-top:10px; }
+.spec { margin-top:16px; }
+.spec .bar { height:14px; border-radius:999px; background:linear-gradient(90deg,var(--ibiza) 0%,var(--ib-tint) 55%,var(--ib-soft) 100%); margin:10px 0 14px; }
+.spec .ends { display:grid; grid-template-columns:1fr 1fr; gap:48px; }
+.spec .end { font-size:21px; line-height:1.5; color:var(--grey); font-weight:500; }
+.spec .end b { display:block; font-size:23px; font-weight:800; color:var(--ink); margin-bottom:4px; }
+.spec .cert { margin-top:16px; display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
+.spec .cert .k { font-size:20px; color:var(--grey); font-weight:800; letter-spacing:2px; margin-right:4px; }
+.spec .cert .c { font-size:20px; font-weight:700; background:var(--ib-soft); border-radius:999px; padding:6px 16px; }
+
+/* ═══ P5 設計圖比較 ═══ */
+.designs { display:flex; gap:32px; flex:1; min-height:0; }
+.design { flex:1; display:flex; flex-direction:column; min-height:0; }
+.design .img { flex:1; min-height:0; border-radius:16px; overflow:hidden; background:var(--soft); position:relative; }
+.design .img img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.design .cap { padding-top:14px; }
+.design .cap .t { font-size:28px; font-weight:900; }
+.design .cap .t small { font-size:20px; color:var(--blue); font-weight:800; letter-spacing:2px; margin-left:12px; }
+.design .cap .s { font-size:21px; color:var(--grey); font-weight:500; line-height:1.5; margin-top:6px; }
+.design .cap .kw { margin-top:8px; display:flex; gap:10px; }
+.design .cap .kw span { font-size:19px; font-weight:700; background:var(--ib-soft); border-radius:999px; padding:4px 14px; }
+.note { font-size:19px; color:var(--grey2); font-weight:600; margin-top:12px; line-height:1.5; }
+
+/* ═══ P6 圈圈清單＋節點流程 ═══ */
+.checks { display:flex; flex-direction:column; justify-content:space-evenly; height:100%; }
+.check { display:flex; align-items:flex-start; gap:18px; }
+.check .cir { flex:0 0 46px; height:46px; border-radius:50%; background:var(--yellow); display:flex; align-items:center; justify-content:center; margin-top:2px; }
+.check .cir svg { width:24px; height:24px; }
+.check .t { font-size:24px; font-weight:800; line-height:1.4; }
+.check .s { font-size:21px; color:var(--grey); font-weight:500; line-height:1.5; margin-top:4px; }
+.steps { display:flex; flex-direction:column; justify-content:space-evenly; height:100%; position:relative; padding-left:8px; }
+.steps::before { content:""; position:absolute; left:23px; top:24px; bottom:24px; width:3px; background:var(--line); }
+.step { display:flex; align-items:center; gap:22px; position:relative; }
+.step .dot { flex:0 0 34px; height:34px; border-radius:50%; background:#fff; border:4px solid var(--ibiza); z-index:1; }
+.step.now .dot { background:var(--ibiza); }
+.step .t { font-size:23px; font-weight:800; }
+.step .t small { display:block; font-size:20px; color:var(--grey); font-weight:500; margin-top:2px; }
+
+/* ═══ 靶心／中樞／循環 頁右欄說明 ═══ */
+.tgt .t { font-size:23px; font-weight:800; }
+.tgt .s { font-size:21px; color:var(--grey); font-weight:500; line-height:1.5; margin-top:3px; }
+
+/* ═══ P1 金字塔（上窄下寬） ═══ */
+.pyr { grid-template-columns:600px 1fr; column-gap:48px; row-gap:8px; height:auto; flex:1; min-height:0; }
+.pyr .layer { height:104px; }
+.pyr .f1 { clip-path:polygon(8% 0,92% 0,100% 100%,0 100%); background:var(--ib-soft); }
+.pyr .f2 { clip-path:polygon(16% 0,84% 0,92% 100%,8% 100%); background:var(--ib-mid); }
+.pyr .f3 { clip-path:polygon(24% 0,76% 0,84% 100%,16% 100%); background:var(--ib-tint); }
+.pyr .f4 { clip-path:polygon(32% 0,68% 0,76% 100%,24% 100%); background:var(--ibiza); color:#fff; }
+.pyr .f4 span { display:flex; flex-direction:column; align-items:center; line-height:1.15; }
+.pyr .f4 small { font-size:19px; font-weight:800; margin-top:4px; }
+
+/* ═══ P7 公關：主事件＋三欄 ═══ */
+.hero { background:var(--ib-soft); border-left:6px solid var(--ibiza); padding:22px 28px; }
+.hero .k { font-size:20px; color:var(--grey); font-weight:800; letter-spacing:2px; }
+.hero .t { font-size:30px; font-weight:900; margin-top:6px; line-height:1.35; }
+.hero .s { font-size:21px; color:var(--grey); font-weight:500; line-height:1.55; margin-top:8px; }
+.tri { display:flex; gap:44px; margin-top:24px; flex:1; min-height:0; }
+.tc { flex:1; }
+.tc .bar { height:5px; background:var(--ibiza); border-radius:3px; margin-bottom:14px; }
+.tc .t { font-size:25px; font-weight:800; margin-bottom:4px; }
+.tc ul.dash li { font-size:22px; margin:10px 0; }
+.tc .s { font-size:21px; color:var(--grey); font-weight:500; line-height:1.55; margin-top:8px; }
+
+/* ═══ P8 時程表：橫向時間軸＋三條線 ═══ */
+table.tl { width:100%; border-collapse:collapse; table-layout:fixed; font-size:20px; height:100%; }
+table.tl th:first-child, table.tl td.lab { width:150px; }
+table.tl tr.when th { position:relative; text-align:left; vertical-align:top; padding:34px 14px 14px; border-bottom:2.5px solid var(--ink); }
+table.tl tr.when th b { display:block; font-size:24px; font-weight:900; }
+table.tl tr.when th small { display:block; font-size:20px; color:var(--grey); font-weight:700; margin-top:2px; }
+table.tl tr.when th::before { content:""; position:absolute; left:0; right:0; top:14px; height:4px; background:var(--ib-tint); }
+table.tl tr.when th:first-child::before { display:none; }
+table.tl tr.when th .dot { position:absolute; left:14px; top:6px; width:20px; height:20px; border-radius:50%; background:#fff; border:4px solid var(--ibiza); }
+table.tl tr.when th.hi .dot { background:var(--ibiza); }
+table.tl tr.when th.hi b { color:var(--ibiza); }
+table.tl td { padding:20px 14px; border-bottom:1.5px solid var(--line); vertical-align:top; line-height:1.5; font-weight:600; }
+table.tl td.lab { font-size:22px; font-weight:800; color:var(--ink); }
+table.tl td.hi { background:var(--ib-soft); font-weight:800; }
+
+/* ═══ P6/P7 設計方向：桌機＋手機截圖 ═══ */
+header.hd h1 .h1en { font-size:22px; color:var(--ibiza); font-weight:800; letter-spacing:3px; margin-left:16px; vertical-align:middle; }
+.shots { display:flex; gap:32px; flex:1; min-height:0; align-items:stretch; }
+.shot { position:relative; border-radius:14px; overflow:hidden; background:var(--soft); border:1.5px solid var(--line); }
+.shot img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:top; }
+.shot.desk { flex:1; }
+.shot.mob { flex:0 0 218px; }
+.shot .lb { position:absolute; left:14px; top:12px; background:var(--ink); color:#fff; font-size:18px; font-weight:800; padding:4px 12px; border-radius:999px; letter-spacing:1px; }
+.shotcap { display:flex; align-items:center; gap:28px; margin-top:16px; }
+.shotcap .s { flex:1; font-size:21px; color:var(--grey); font-weight:500; line-height:1.5; }
+.shotcap .kw { display:flex; gap:10px; flex:0 0 auto; }
+.shotcap .kw span { font-size:19px; font-weight:700; background:var(--ib-soft); border-radius:999px; padding:5px 14px; }
+
+.shot.empty::after { content:attr(data-ph); position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:#707A88; font-size:19px; font-weight:600; padding:0 36px; line-height:1.6; text-align:center; }
+.shot.mob.empty::after { padding:0 18px; }
+
+/* ═══ P6/P7 三案並排比較 ═══ */
+.cmp3 { display:flex; gap:36px; flex:1; min-height:0; }
+.cmp3 .cmpc { flex:1; display:flex; flex-direction:column; min-height:0; }
+.cmp3 .shot.desktop { flex:1; min-height:0; }
+.cmp3.mobile .cmpc { align-items:center; text-align:center; }
+.cmp3 .shot.mobile { flex:0 0 auto; width:212px; aspect-ratio:390/844; max-height:440px; }
+.cmp3 .nm { margin-top:14px; display:flex; align-items:baseline; gap:12px; }
+.cmp3.mobile .nm { justify-content:center; }
+.cmp3 .nm b { font-size:32px; font-weight:900; color:var(--ibiza); }
+.cmp3 .nm span { font-size:20px; color:var(--grey); font-weight:700; letter-spacing:2px; }
+.cmp3 .one { font-size:22px; font-weight:800; margin-top:4px; }
+.cmp3 .dsc { font-size:20px; color:var(--grey2); font-weight:500; margin-top:6px; line-height:1.5; }
+.cmp3 .shot.empty::after { font-size:19px; padding:0 24px; }
+
+.slide.blank { padding:0; }
+
+/* ── 設計提案頁（S6/S7）：TARS 交接的 HTML 以 iframe 原生嵌入；PNG 為縮圖與列印備援 ── */
+main.bd iframe.design { display:block; width:100%; height:100%; flex:1; min-height:0; border:0; }
+main.bd img.design-still { display:none; width:100%; height:100%; object-fit:contain; object-position:top left; }
+.thumb-slide main.bd img.design-still { display:block; }
+
+/* ═══ 簡報模式（類型 2 機制：1600×900 等比縮放、一次一頁、側欄縮圖） ═══ */
+html, body { height:100%; }
+body { display:flex; overflow:hidden; background:#fff; }
+#side { flex:0 0 220px; height:100%; overflow-y:auto; border-right:1.5px solid var(--line); background:#F5F5F7; padding:8px; }
+#thumbs .thumb { position:relative; width:100%; overflow:hidden; border:2px solid transparent; border-radius:6px; background:#fff; margin-bottom:8px; cursor:pointer; }
+#thumbs .thumb.on { border-color:var(--ibiza); }
+#thumbs .thumb-slide { position:absolute; left:0; top:0; transform-origin:top left; pointer-events:none; }
+#stage { flex:1; height:100%; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
+#deck { width:1600px; height:900px; position:relative; transform-origin:center; flex:0 0 auto; }
+#deck > .slide { position:absolute; inset:0; display:none; }
+#deck > .slide.on { display:flex; }
+.nav { position:fixed; top:0; bottom:0; width:72px; border:0; background:transparent; color:var(--ibiza); font-size:64px; cursor:pointer; opacity:0; transition:opacity .2s; z-index:5; }
+.nav:hover { opacity:1; } .nav.prev { left:220px; } .nav.next { right:0; }
+#pn { position:fixed; right:16px; bottom:12px; font-size:14px; color:var(--grey2); font-weight:600; z-index:5; }
+@media print {
+  html, body { height:auto; display:block; overflow:visible; }
+  #side, .nav, #pn { display:none !important; }
+  #stage { display:block; height:auto; overflow:visible; }
+  #deck { transform:none !important; width:auto; height:auto; }
+  #deck > .slide { position:relative; inset:auto; display:flex !important; }
+  main.bd iframe.design { display:none; }
+  main.bd img.design-still { display:block; }
+}

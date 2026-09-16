@@ -1,0 +1,26 @@
+<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- 第 7 頁手機版：內容沿用 design/deck-handoff/mobile.html（TARS），手機框照 TARS 原本示意 design/mobile-comparison.html 的樣式（細黑邊圓角），可可 9/9 依米奇要求；14:55 再拿掉一句話說明，只留名字＋畫面；15:02 捲軸隱藏改照 TARS mobile.html 同一套規則＋加 cache-bust；15:00 改 iPhone 比例 390×844、畫面可在框內滑動、不限縮放上限（米奇：框太長太小） -->
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:"PingFang TC",sans-serif;color:#1d1d1f;background:transparent}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;height:100%;align-content:start}
+article{min-width:0}
+h2{font-size:22px;margin:0 0 8px;line-height:1.2;text-align:center}
+h2 span{font-size:19px;font-weight:500;margin-left:12px}
+.phone{position:relative;margin:auto;overflow:hidden;border:6px solid #1d1d1f;border-radius:25px;background:#fff;box-shadow:0 12px 25px #0000000c}
+.screen{position:relative;width:100%;aspect-ratio:390/844;overflow:hidden;clip-path:inset(0 round 18px);background:#fff}
+.scale{position:absolute;left:0;top:0;width:390px;height:844px;transform-origin:0 0}
+.scale iframe{display:block;width:390px;height:844px;border:0;overflow:hidden}
+</style>
+<body><div class="grid">
+<article><h2>GoNexus<span>匯流站</span></h2><div class="phone"><div class="screen"><div class="scale"><iframe scrolling="yes" title="GoNexus" src="../design/abstract-concepts/curation.html?v=meeting-final2"></iframe></div></div></div></article>
+<article><h2>GoNetwork<span>倉聯網</span></h2><div class="phone"><div class="screen"><div class="scale"><iframe scrolling="yes" title="GoNetwork" src="../design/abstract-concepts/network.html?v=meeting-final2"></iframe></div></div></div></article>
+<article><h2>GoAtlas<span>物流圖鑑</span></h2><div class="phone"><div class="screen"><div class="scale"><iframe scrolling="yes" title="GoAtlas" src="../design/abstract-concepts/journal.html?v=meeting-final2"></iframe></div></div></div></article>
+</div>
+<script>
+const W=390,H=844;
+function fit(){for(const card of document.querySelectorAll('article')){const phone=card.querySelector('.phone'),screen=card.querySelector('.screen');const head=card.querySelector('h2').offsetHeight+10;const scale=Math.min(1,(innerHeight-head-12-8)/H,(card.clientWidth-12)/W);phone.style.width=W*scale+12+'px';screen.style.height=H*scale+'px';card.querySelector('.scale').style.transform='scale('+scale+')'}}
+function hideBars(frame){try{const d=frame.contentDocument;if(!d||!d.head||d.getElementById('koko-nobar'))return;const style=d.createElement('style');style.id='koko-nobar';style.textContent='html{overflow-y:auto!important;scrollbar-width:none!important}body{overflow:visible!important;scrollbar-width:none!important}::-webkit-scrollbar{display:none!important;width:0!important;height:0!important}*{scrollbar-width:none!important;-ms-overflow-style:none!important}*::-webkit-scrollbar{display:none!important;width:0!important;height:0!important}'+'footer,.sculptural .note-strip{display:none!important}';d.head.append(style)}catch(e){}}
+for(const frame of document.querySelectorAll('iframe')){frame.addEventListener('load',()=>{hideBars(frame);fit()});if(frame.contentDocument&&frame.contentDocument.readyState!=='loading')hideBars(frame)}
+new ResizeObserver(fit).observe(document.body);fit();
+</script></body></html>
